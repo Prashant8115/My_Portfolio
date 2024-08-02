@@ -1,0 +1,109 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+/* navbar */
+header{
+    width: 100vw;
+    background-color:black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position:fixed;
+    padding: 1px;
+}
+.name{
+    display:flex;
+    align-items: center;
+    gap: 5px;
+}
+.nav_links{
+    display: flex;
+    gap:30px;
+}
+
+/* home page */
+.home{
+    height: 100vh;
+    font-weight: 100vw;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    background-color: #1c1c27;
+    color: white;
+}
+.intro{
+    height: 50%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+}
+.h3Container{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.hColor{
+    color: red;
+}
+.para{
+    color: rgb(187, 185, 185);
+}
+.checkResume{
+    background-color: rgb(6, 163, 242);
+    color: white;
+    border: 2px solid inset;
+    border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding:10px 17px 10px 17px ;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+}
+.checkResume:hover{
+    background-color:  rgb(2, 114, 170);
+}
+.imgContainer{
+    height: 50%;
+    width: 30%;
+    display: flex;
+    justify-content:end;
+    align-items: center;
+}
+.img{
+    height:200px;
+    border: 2px solid rgb(6, 163, 242);
+    border-radius: 100%; 
+}
+
+/* about page */
+.about{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #1c1c27;
+    color: white;
+}
+.about1{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    gap: 10px;
+}
+.h1About{
+    text-decoration: underline red;
+}
+.p2About{
+    text-align: start;
+    font-weight: bold;
+    color: rgb(187, 185, 185);
+}
+
