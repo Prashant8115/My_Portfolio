@@ -1,7 +1,9 @@
 * {
     margin: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
     padding: 0px;
-    font-family: sans-serif ,"poppins";
+    font-family: sans-serif, "poppins";
 }
 
 /* navbar */
@@ -66,7 +68,7 @@ header {
     background-color: rgb(6, 163, 242);
     color: white;
     border: 2px solid inset;
-     border-radius: 20px;
+    border-radius: 20px;
     width: fit-content;
     display: flex;
     align-items: center;
@@ -114,14 +116,14 @@ header {
     gap: 10px;
 }
 
-.about1 .checkResume{
+.about1 .checkResume {
     align-self: flex-start;
 }
 
 .h1About {
     border-bottom: 2px solid red;
     padding-bottom: 1px;
- }
+}
 
 .p2About {
     text-align: start;
@@ -141,26 +143,73 @@ header {
 }
 
 /* Educations page */
-.education{
+.education {
     height: 100vh;
     width: 100vw;
     background-color: #1c1c27;
     color: white;
 }
-.divContainer{
+
+.divContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 25px;
     width: 100%;
 }
-.dataContainer{
+
+.dataContainer {
     border: 2px solid blueviolet;
     border-radius: 15px;
     box-shadow: rgba(23, 92, 230, 0.15) 0px 0px 24px 10px;
     background-color: black;
-    color: white;
     width: 60%;
     text-align: center;
     padding: 15px;
+}
+
+/* =================== skills page =============================== */
+.skills {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.div_skills {
+    width: 100%;
+}
+
+.div_btn {
+    display: flex;
+    gap: 3px;
+}
+
+.skills_btn {
+    padding: 10px;
+    font-size: medium;
+    display: flex;
+}
+
+
+.skills-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 60%;
+    height: 40%;
+}
+
+
+.frontend-page-container,
+.langauge-page-container,
+.others-page-container {
+    border: 1px solid black;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+
 }

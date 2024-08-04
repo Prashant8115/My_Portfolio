@@ -1,5 +1,5 @@
 let navLinks = document.querySelector(".nav_links");
-let navData = ["Home", "About Me", "Educations","Skills", "Projects", "Experiences", "Contect"];
+let navData = ["Home", "About Me", "Educations", "Skills", "Projects", "Experiences", "Contect"];
 navData.map((item) => {
     let anchorTag = document.createElement('a');
     anchorTag.append(item);
@@ -71,7 +71,7 @@ let connectId = [
         link: "https://github.com/Prashant8115"
     },
     {
-        img: '/Photos/linkedin.svg',     
+        img: '/Photos/linkedin.svg',
         link: "https://www.linkedin.com/in/prashant-sharma-83ab77246"
     },
     {
@@ -95,56 +95,126 @@ connectId.map((element) => {
 })
 
 // Educations page
-let eductionContent=document.querySelector('.education');
-let divContainer=document.createElement('div');
+let eductionContent = document.querySelector('.education');
+let divContainer = document.createElement('div');
 divContainer.classList.add('divContainer');
 eductionContent.append(divContainer);
 
-let h1Eduction=document.createElement('h1');
+let h1Eduction = document.createElement('h1');
 h1Eduction.classList.add('h1About');
-h1Eduction.innerText="Educations";
+h1Eduction.innerText = "Educations";
 divContainer.append(h1Eduction);
 
-let p1Education=document.createElement("p");
-p1Education.innerText="My education has been a journey of self-discovery and growth. My educational details are as follows.";
+let p1Education = document.createElement("p");
+p1Education.innerText = "My education has been a journey of self-discovery and growth. My educational details are as follows.";
 divContainer.append(p1Education);
 
-let dataEduction=[
+let dataEduction = [
     {
-        college:'Dr. APJ ABDUL KALAM TECHNICAL UNIVERSITY , LUCKNOW',
-        course:"Course:- B.tech",
-        branch:"Branch:- Computer Science & Engineering"
+        college: 'Dr. APJ ABDUL KALAM TECHNICAL UNIVERSITY , LUCKNOW',
+        course: "Course:- B.tech",
+        branch: "Branch:- Computer Science & Engineering"
     },
     {
-        college:'S.V.M Inter College Bisalpur, Pilibhit',
-        course:"Course:- 12th",
-        branch:"Branch:- Physics , Chemistry , Mathematics"
+        college: 'S.V.M Inter College Bisalpur, Pilibhit',
+        course: "Course:- 12th",
+        branch: "Branch:- Physics , Chemistry , Mathematics"
     },
     {
-        college:'K.K.S.V.M HSS Bisalpur, Pilibhit',
-        course:"Course:- 10th",
-        branch:"Branch:- Physics , Chemistry , Mathematics"
+        college: 'K.K.S.V.M HSS Bisalpur, Pilibhit',
+        course: "Course:- 10th",
+        branch: "Branch:- Physics , Chemistry , Mathematics"
     }
 ]
 
-dataEduction.map((element)=>{
-    let dataContainer=document.createElement('div');
-   dataContainer.classList.add('dataContainer');
-   divContainer.append(dataContainer);
+dataEduction.map((element) => {
+    let dataContainer = document.createElement('div');
+    dataContainer.classList.add('dataContainer');
+    divContainer.append(dataContainer);
 
-   let h2Tag=document.createElement("h2");
-   h2Tag.innerText=element.college;
-   dataContainer.append(h2Tag);
+    let h2Tag = document.createElement("h2");
+    h2Tag.innerText = element.college;
+    dataContainer.append(h2Tag);
 
-   let pTag=document.createElement("p");
-   pTag.innerText=element.course;
-   dataContainer.append(pTag);
+    let pTag = document.createElement("p");
+    pTag.innerText = element.course;
+    dataContainer.append(pTag);
 
-   let p1Tag=document.createElement("p");
-   p1Tag.innerText=element.branch;
-   dataContainer.append(p1Tag);
+    let p1Tag = document.createElement("p");
+    p1Tag.innerText = element.branch;
+    dataContainer.append(p1Tag);
 
 })
+
+// ========================= skills page =====================================>>>
+
+let skillsContent = document.querySelector('.skills');
+let divSkills = document.createElement('div');
+divSkills.classList.add('div_skills');
+skillsContent.append(divSkills);
+
+let h1Skills = document.createElement('h1');
+h1Skills.classList.add('h1About');
+h1Skills.innerText = "Skills";
+skillsContent.append(h1Skills);
+
+let p1Skills = document.createElement("p");
+p1Skills.innerText = "Here are some of my skills on which I have been working on for the past 6 months.";
+skillsContent.append(p1Skills);
+
+let div_btn = document.createElement("div");
+div_btn.classList.add("div_btn");
+skillsContent.append(div_btn);
+
+
+// skill pages =>
+let skillPageContainerTag = document.createElement('div')
+skillPageContainerTag.classList.add('skills-page-container');
+skillsContent.append(skillPageContainerTag);
+
+
+// create skills tag =>
+const createSkillTag = (tagName, className, skillsContent) => {
+    skillPageContainerTag.innerHTML = '';
+    let tag = document.createElement(tagName);
+    tag.classList.add(className)
+    tag.innerHTML = skillsContent;
+    skillPageContainerTag.append(tag);
+}
+ 
+// button functionalities =>
+const skillPageBtn = (e) => {
+    let value = e.target.innerHTML;
+    switch (value) {
+        case 'Frontend':
+            createSkillTag('div', 'frontend-page-container', 'Hello I am frontend page');
+            break;
+        case 'Language':
+            createSkillTag('div', 'langauge-page-container', "Hello I am Langauge page");
+            break;
+        case 'Others':
+            createSkillTag('div', 'others-page-container', "Hello I am Other page");
+            break;
+    }
+}
+
+// Data and loop on button =>
+    let btnData = ["Frontend", "Language", "Others"];
+for (const btn of btnData) {
+    let button = document.createElement("button");
+    button.classList.add("skills_btn");
+    button.innerText = btn;
+    div_btn.append(button);
+    button.addEventListener('click', skillPageBtn)
+    if (btn == "Frontend") {
+        createSkillTag('div', 'frontend-page-container', 'Hello I am frontend page');
+    }
+}
+
+
+
+
+
 
 
 
