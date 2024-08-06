@@ -148,6 +148,70 @@ dataEduction.map((element) => {
 
 // ========================= skills page =====================================>>>
 
+//Frontend skillsContent data =>
+const skillsContentData = [
+    {
+        img: "Photos/html.svg",
+        skillsName: "Html",
+    },
+    {
+        img: "Photos/css.svg",
+        skillsName: "CSS",
+    },
+    {
+        img: "Photos/js.svg",
+        skillsName: "Java Script",
+    },
+    {
+        img: "Photos/tailwind.svg",
+        skillsName: "Tailwind Css",
+    },
+    {
+        img: "Photos/bootstrap.svg",
+        skillsName: "Bootstrap",
+    },
+    {
+        img: "Photos/reactjs.svg",
+        skillsName: "React",
+    },
+    {
+        img: "Photos/redux.svg",
+        skillsName: "Redux",
+    },
+    {
+        img: "Photos/redux.svg",
+        skillsName: "APIs",
+    },
+    {
+        img: "Photos/redux.svg",
+        skillsName: "Media Queries",
+    },
+]
+
+// Language Skills data =>
+let langaugeSkillsData=[
+    {
+        img: "Photos/java.svg",
+        skillsName: "Java",
+    },
+    {
+        img: "Photos/js.svg",
+        skillsName: "Java Script",
+    }
+]
+
+// Others Skills Data =>
+let othersSkillsData=[
+    {
+        img: "Photos/vsCode.svg",
+        skillsName: "Vs Code",
+    },
+    {
+        img: "Photos/gitHub.svg",
+        skillsName: "Git & Git hub",
+    }
+]
+
 let skillsContent = document.querySelector('.skills');
 let divSkills = document.createElement('div');
 divSkills.classList.add('div_skills');
@@ -174,32 +238,105 @@ skillsContent.append(skillPageContainerTag);
 
 
 // create skills tag =>
-const createSkillTag = (tagName, className, skillsContent) => {
+const createSkillTag = (frontendSkills,langaugeSkills,othersSkills) => {
     skillPageContainerTag.innerHTML = '';
-    let tag = document.createElement(tagName);
-    tag.classList.add(className)
-    tag.innerHTML = skillsContent;
-    skillPageContainerTag.append(tag);
+   
+    frontendSkills();
+    langaugeSkills();
+    othersSkills();
 }
  
-// button functionalities =>
-const skillPageBtn = (e) => {
-    let value = e.target.innerHTML;
-    switch (value) {
-        case 'Frontend':
-            createSkillTag('div', 'frontend-page-container', 'Hello I am frontend page');
-            break;
-        case 'Language':
-            createSkillTag('div', 'langauge-page-container', "Hello I am Langauge page");
-            break;
-        case 'Others':
-            createSkillTag('div', 'others-page-container', "Hello I am Other page");
-            break;
-    }
+
+let frontendSkills = () => {
+    // contentSkillsTag();
+    let tag = document.createElement("div");
+    tag.classList.add('frontend-page-container');
+    tag.innerHTML="Frontend";
+    skillPageContainerTag.append(tag);
+    let div_scd = document.createElement('div');
+    div_scd.classList.add("div_scd")
+    tag.append(div_scd);
+
+    skillsContentData.map((element) => {
+        let divSKillsData = document.createElement('div');
+        divSKillsData.classList.add("div_skills_data");
+        let imgSkillsTag = document.createElement("img");
+        imgSkillsTag.classList.add("img-skills-tag");
+        imgSkillsTag.setAttribute("src", element.img);
+        let pSKillsData = document.createElement("p");
+        pSKillsData.innerHTML = element.skillsName;
+        div_scd.append(divSKillsData);
+        divSKillsData.append(imgSkillsTag);
+        divSKillsData.append(pSKillsData);
+    })
+}
+let languageSkills = () => {
+    let tag = document.createElement("div");
+    tag.classList.add('langauge-page-container');
+    tag.innerHTML="Language";
+    skillPageContainerTag.append(tag);
+    let div_scd = document.createElement('div');
+    div_scd.classList.add("div_scd")
+    tag.append(div_scd);
+
+    langaugeSkillsData.map((element) => {
+        let divSKillsData = document.createElement('div');
+        divSKillsData.classList.add("div_skills_data");
+        let imgSkillsTag = document.createElement("img");
+        imgSkillsTag.classList.add("img-skills-tag");
+        imgSkillsTag.setAttribute("src", element.img);
+        let pSKillsData = document.createElement("p");
+        pSKillsData.innerHTML = element.skillsName;
+        div_scd.append(divSKillsData);
+        divSKillsData.append(imgSkillsTag);
+        divSKillsData.append(pSKillsData);
+    })
 }
 
+let othersSkills = () => {
+    let tag = document.createElement("div");
+    tag.classList.add('others-page-container');
+    tag.innerHTML="Others";
+    skillPageContainerTag.append(tag);
+    let div_scd = document.createElement('div');
+    div_scd.classList.add("div_scd")
+    tag.append(div_scd);
+
+    othersSkillsData.map((element) => {
+        let divSKillsData = document.createElement('div');
+        divSKillsData.classList.add("div_skills_data");
+        let imgSkillsTag = document.createElement("img");
+        imgSkillsTag.classList.add("img-skills-tag");
+        imgSkillsTag.setAttribute("src", element.img);
+        let pSKillsData = document.createElement("p");
+        pSKillsData.innerHTML = element.skillsName;
+        div_scd.append(divSKillsData);
+        divSKillsData.append(imgSkillsTag);
+        divSKillsData.append(pSKillsData);
+    })
+}
+
+
+
+// button functionalities =>
+    const skillPageBtn = (element) => {
+        let value = element.target.innerHTML;
+        switch (value) {
+            case 'Frontend':
+                createSkillTag(frontendSkills);
+                break;
+            case 'Language':
+                createSkillTag(languageSkills);
+                break;
+            case 'Others':
+                createSkillTag(othersSkills);
+                break;
+        }
+    }
+
+
 // Data and loop on button =>
-    let btnData = ["Frontend", "Language", "Others"];
+let btnData = ["Frontend", "Language", "Others"];
 for (const btn of btnData) {
     let button = document.createElement("button");
     button.classList.add("skills_btn");
@@ -207,9 +344,13 @@ for (const btn of btnData) {
     div_btn.append(button);
     button.addEventListener('click', skillPageBtn)
     if (btn == "Frontend") {
-        createSkillTag('div', 'frontend-page-container', 'Hello I am frontend page');
+        frontendSkills();
     }
 }
+
+
+
+
 
 
 
