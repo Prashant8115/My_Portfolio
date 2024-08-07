@@ -6,7 +6,7 @@ navData.map((item) => {
     navLinks.append(anchorTag);
 })
 
-// home page
+//================================= home page===================================
 let content = document.querySelector(".intro");
 let homeContainer = document.querySelector(".home");
 let h2Tag = document.createElement('h2');
@@ -46,7 +46,7 @@ img.setAttribute('src', "/Photos/circle_img.png");
 img.classList.add('img');
 div.append(img);
 
-// About page
+//======================================= About page=====================================
 let aboutContent = document.querySelector(".about1");
 let h1About = document.createElement('h1');
 h1About.classList.add('h1About');
@@ -94,7 +94,7 @@ connectId.map((element) => {
     divTag.appendChild(aTag);
 })
 
-// Educations page
+// =================================Educations page============================
 let eductionContent = document.querySelector('.education');
 let divContainer = document.createElement('div');
 divContainer.classList.add('divContainer');
@@ -189,7 +189,7 @@ const skillsContentData = [
 ]
 
 // Language Skills data =>
-let langaugeSkillsData=[
+let langaugeSkillsData = [
     {
         img: "Photos/java.svg",
         skillsName: "Java",
@@ -201,7 +201,7 @@ let langaugeSkillsData=[
 ]
 
 // Others Skills Data =>
-let othersSkillsData=[
+let othersSkillsData = [
     {
         img: "Photos/vsCode.svg",
         skillsName: "Vs Code",
@@ -213,10 +213,6 @@ let othersSkillsData=[
 ]
 
 let skillsContent = document.querySelector('.skills');
-let divSkills = document.createElement('div');
-divSkills.classList.add('div_skills');
-skillsContent.append(divSkills);
-
 let h1Skills = document.createElement('h1');
 h1Skills.classList.add('h1About');
 h1Skills.innerText = "Skills";
@@ -238,21 +234,23 @@ skillsContent.append(skillPageContainerTag);
 
 
 // create skills tag =>
-const createSkillTag = (frontendSkills,langaugeSkills,othersSkills) => {
+const createSkillTag = (frontendSkills, langaugeSkills, othersSkills) => {
     skillPageContainerTag.innerHTML = '';
-   
+
     frontendSkills();
     langaugeSkills();
     othersSkills();
 }
- 
+
 
 let frontendSkills = () => {
-    // contentSkillsTag();
     let tag = document.createElement("div");
     tag.classList.add('frontend-page-container');
-    tag.innerHTML="Frontend";
     skillPageContainerTag.append(tag);
+    let tagContent = document.createElement("p");
+    tagContent.classList.add("tagContent");
+    tagContent.innerHTML = "Frontend";
+    tag.append(tagContent);
     let div_scd = document.createElement('div');
     div_scd.classList.add("div_scd")
     tag.append(div_scd);
@@ -273,8 +271,11 @@ let frontendSkills = () => {
 let languageSkills = () => {
     let tag = document.createElement("div");
     tag.classList.add('langauge-page-container');
-    tag.innerHTML="Language";
     skillPageContainerTag.append(tag);
+    let tagLanguageContent = document.createElement("p");
+    tagLanguageContent.classList.add("tagContent");
+    tagLanguageContent.innerHTML = "Language";
+    tag.append(tagLanguageContent);
     let div_scd = document.createElement('div');
     div_scd.classList.add("div_scd")
     tag.append(div_scd);
@@ -296,8 +297,11 @@ let languageSkills = () => {
 let othersSkills = () => {
     let tag = document.createElement("div");
     tag.classList.add('others-page-container');
-    tag.innerHTML="Others";
     skillPageContainerTag.append(tag);
+    let tagOthersContent = document.createElement("p");
+    tagOthersContent.classList.add("tagContent");
+    tagOthersContent.innerHTML = "Others";
+    tag.append(tagOthersContent);
     let div_scd = document.createElement('div');
     div_scd.classList.add("div_scd")
     tag.append(div_scd);
@@ -319,20 +323,20 @@ let othersSkills = () => {
 
 
 // button functionalities =>
-    const skillPageBtn = (element) => {
-        let value = element.target.innerHTML;
-        switch (value) {
-            case 'Frontend':
-                createSkillTag(frontendSkills);
-                break;
-            case 'Language':
-                createSkillTag(languageSkills);
-                break;
-            case 'Others':
-                createSkillTag(othersSkills);
-                break;
-        }
+const skillPageBtn = (element) => {
+    let value = element.target.innerHTML;
+    switch (value) {
+        case 'Frontend':
+            createSkillTag(frontendSkills);
+            break;
+        case 'Language':
+            createSkillTag(languageSkills);
+            break;
+        case 'Others':
+            createSkillTag(othersSkills);
+            break;
     }
+}
 
 
 // Data and loop on button =>
@@ -347,6 +351,146 @@ for (const btn of btnData) {
         frontendSkills();
     }
 }
+
+
+//====================== projects page ===================================
+
+// projects data =>
+let projectsContentData = [
+    {
+        projectName: "Todo List",
+        language1: "Html",
+        language2: "CSS",
+        language3: "Java Script",
+    },
+    {
+        projectName: "Simon Game",
+        language1: "Html",
+        language2: "CSS",
+        language3: "Java Script",
+    },
+    {
+        projectName: "Calculator",
+        language1: "Html",
+        language2: "CSS",
+        language3: "Java Script",
+    },
+    {
+        projectName: "Password Manager",
+        language1: "Html",
+        language2: "CSS",
+        language3: "Java Script",
+    },
+    {
+        projectName: "Microsoft Clone Page",
+        language1: "Html",
+        language2: "Tailwind CSS",
+    },
+    {
+        projectName: "Instagram Clone Page",
+        language1: "Html",
+        language2: "Tailwind CSS",
+    },
+    {
+        projectName: "Facebook Clone Page",
+        language1: "Html",
+        language2: "Tailwind CSS",
+    },
+    {
+        projectName: "Word counter & Character counter App ",
+        language1: "Html",
+        language2: "Bootstrap",
+        language3: "React Js",
+    },
+    {
+        projectName: "Connect Four Game",
+        language1: "Java",
+        language2: "Java Fx",
+        language3: "Oops",
+    },
+]
+
+
+let projectsContent = document.querySelector('.projects');
+let h1Projects = document.createElement('h1');
+h1Projects.classList.add('h1About');
+h1Projects.innerText = "Projects";
+projectsContent.append(h1Projects);
+
+let p1Projects = document.createElement("p");
+p1Projects.innerText = "Whatever Skills I have learnt yet , By using all of them I have been made some projects.";
+projectsContent.append(p1Projects);
+
+let divProjectsContainer = document.createElement('div');
+divProjectsContainer.classList.add('divProjectsContainer');
+projectsContent.append(divProjectsContainer);
+let projectsTag = document.createElement("p");
+projectsTag.classList.add("projectsTag")
+projectsTag.innerHTML = "Projects";
+divProjectsContainer.append(projectsTag);
+
+let contentProjectAllDiv = document.createElement('div');
+contentProjectAllDiv.classList.add("contentProjectAllDiv");
+divProjectsContainer.append(contentProjectAllDiv);
+
+projectsContentData.map((element) => {
+    let contentProjectDiv = document.createElement('div');
+    contentProjectDiv.classList.add("contentProjectDiv");
+    contentProjectAllDiv.append(contentProjectDiv);
+
+    let contentProjectTag = document.createElement('p');
+    contentProjectTag.classList.add("contentProjectTag");
+    contentProjectTag.innerHTML = element.projectName;
+    contentProjectDiv.append(contentProjectTag);
+
+    let languageProjectContainer = document.createElement('div');
+    languageProjectContainer.classList.add("languageProjectContainer");
+    contentProjectDiv.append(languageProjectContainer);
+
+    let projectLanguage1_Div = document.createElement('div');
+    projectLanguage1_Div.classList.add("projectLanguageDiv");
+    projectLanguage1_Div.innerHTML = element.language1
+    languageProjectContainer.append(projectLanguage1_Div);
+
+    let projectLanguage2_Div = document.createElement('div');
+    projectLanguage2_Div.classList.add("projectLanguageDiv");
+    projectLanguage2_Div.innerHTML = element.language2
+    languageProjectContainer.append(projectLanguage2_Div);
+
+    let projectLanguage3_Div = document.createElement('div');
+    projectLanguage3_Div.classList.add("projectLanguageDiv");
+    if (element.language3 === undefined) {
+    } else {
+        projectLanguage3_Div.innerHTML = element.language3
+        languageProjectContainer.append(projectLanguage3_Div);
+    }
+
+})
+
+    // ======================Experience Page=====================
+
+    let experienceContent = document.querySelector('.experience');
+    let h1Experience = document.createElement('h1');
+    h1Experience.classList.add('h1About');
+    h1Experience.innerText = "Experience";
+    experienceContent.append(h1Experience);
+
+    let  p1Experience= document.createElement("p");
+    p1Experience.innerText = "My work experience as a software engineer and working on different companies and projects.";
+    experienceContent.append(p1Experience);
+
+    let numberTag=document.createElement('p');
+    numberTag.classList.add("numberTag");
+    numberTag.innerHTML="1";
+    experienceContent.append(numberTag);
+
+
+
+
+
+
+
+
 
 
 

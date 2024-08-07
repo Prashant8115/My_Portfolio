@@ -175,12 +175,11 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap:15px;
+    background-color: #1c1c27;
+    color: white;
 }
 
-.div_skills {
-    width: 100%;
-}
 
 .div_btn {
     display: flex;
@@ -197,7 +196,6 @@ header {
 .skills-page-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     width: 50%;
     height: fit-content;
 }
@@ -207,15 +205,18 @@ header {
 .langauge-page-container,
 .others-page-container {
     border: 2px solid blueviolet;
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 0px 24px 10px;
     padding: 10px 15px;
     border-radius: 10px;
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: black;
-    color: white;
-
-
+    background-color: rgb(18, 18, 18);
+}
+.tagContent{
+    color: red;
+    font-size: large;
+    font-weight: bold;
 }
 .div_scd{
     display: flex;
@@ -237,3 +238,94 @@ header {
 .img-skills-tag{
     height: 30px;
 }
+
+/* projects page  */
+.projects {
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    background-color: #1c1c27;
+    color: white;
+    padding-bottom: 20px;
+}
+.divProjectsContainer{
+    border: 2px solid blueviolet;
+    border-radius: 20px;
+    background-color: black;
+    height:fit-content;
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+
+}
+.projectsTag{
+    padding: 10px 20px 10px 20px;
+    font-size: larger;
+    font-weight: bold;
+    display: inline-flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 10px;
+    background-color: blueviolet;
+    border-radius: 30px;
+}
+.contentProjectAllDiv{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    gap:20px ;
+    padding: 10px;
+}
+.contentProjectDiv{
+    border: 1px solid white;
+    border-radius: 10px;
+    height:fit-content;
+    width: 45%;
+    padding: 20px;
+    background-color: #1c1c27;
+
+}
+.contentProjectTag{
+    color: red;
+    font-size:medium;
+
+}
+.languageProjectContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+.projectLanguageDiv{
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 12px 5px 12px;
+
+}
+
+/* Experience Page  */
+.experience{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    background-color: #1c1c27;
+    color: white;
+    padding-top: 50px;
+
+}
+
+.numberTag{
+    background-color: white;
+    border-radius: 100%;
+    color: red;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+}
+
