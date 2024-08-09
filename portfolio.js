@@ -467,33 +467,130 @@ projectsContentData.map((element) => {
 
 })
 
-    // ======================Experience Page=====================
+// ======================Experience Page=====================
 
-    let experienceContent = document.querySelector('.experience');
-    let h1Experience = document.createElement('h1');
-    h1Experience.classList.add('h1About');
-    h1Experience.innerText = "Experience";
-    experienceContent.append(h1Experience);
+// Company Experience Data =>
 
-    let  p1Experience= document.createElement("p");
-    p1Experience.innerText = "My work experience as a software engineer and working on different companies and projects.";
-    experienceContent.append(p1Experience);
+let companyData = [
+    {
+        key: 'Company Name - ',
+        details: "Harshly Educations and skills PVT. LTD. Sector-62 Noida",
+    },
+    {
+        key: 'Duration - ',
+        details: "(Jan-July)",
+    },
+    {
+        key: 'Role As - ',
+        details: "Frontend Developer/ReactJS developer",
+    },
+    {
+        key: 'Working On - ',
+        details: "Worked on Frontend of EASYHAI-ONLINE web application.",
+    },
+    {
+        key: 'Skills - ',
+        details: "HTML ,CSS ,Javascripts ,ReactJS ,Redux ,Bootstraps ,Tailwind CSS ,Material UI",
+    },
+]
 
-    let numberTag=document.createElement('p');
-    numberTag.classList.add("numberTag");
-    numberTag.innerHTML="1";
-    experienceContent.append(numberTag);
+let experienceContent = document.querySelector('.experience');
+let h1Experience = document.createElement('h1');
+h1Experience.classList.add('h1About');
+h1Experience.innerText = "Experience";
+
+let p1Experience = document.createElement("p");
+p1Experience.innerText = "My work experience as a software engineer and working on different companies and projects.";
+
+let numberTag = document.createElement('p');
+numberTag.classList.add("numberTag");
+numberTag.innerHTML = "1";
+
+let experienceContainer = document.createElement('div');
+experienceContainer.classList.add("experienceContainer")
+experienceContent.append(h1Experience, p1Experience, numberTag, experienceContainer);
+
+companyData.map((element) => {
+    let experienceDivTag = document.createElement('div');
+    experienceDivTag.classList.add("experienceDivTag");
+    experienceContainer.append(experienceDivTag);
+
+    let keyTag = document.createElement('p');
+    keyTag.classList.add("keyTag");
+    keyTag.innerHTML = element.key;
+
+    let detailsTag = document.createElement('p');
+    detailsTag.classList.add("detailsTag");
+    detailsTag.innerHTML = element.details;
+    experienceDivTag.append(keyTag, detailsTag);
+
+})
+
+// ======================== Contect Me ================================
+let contectContent = document.querySelector('.contect');
+let h1Contect = document.createElement('h1');
+h1Contect.classList.add('h1About');
+h1Contect.innerText = "Contect";
+
+let p1Contect = document.createElement("p");
+p1Contect.innerText = "Feel free to reach out to me for any questions or opportunities!";
+
+let contectContainer = document.createElement('div');
+contectContainer.classList.add('contectContainer');
+contectContent.append(h1Contect, p1Contect, contectContainer);
+
+let contectFormContainer = document.createElement('div');
+contectFormContainer.classList.add('contectFormContainer');
+
+let emailMe = document.createElement('p');
+emailMe.classList.add('emailMe');
+emailMe.innerText = "Email Me";
+contectFormContainer.append(emailMe);
+
+let contectName = document.createElement('input');
+contectName.classList.add('contectName');
+contectName.setAttribute("placeholder","Name....")
+contectFormContainer.append(contectName);
+
+let contectEmail = document.createElement('input');
+contectEmail.classList.add('contectName');
+contectEmail.setAttribute("placeholder","Email....")
+contectFormContainer.append(contectEmail);
+
+let contectNumber = document.createElement('input');
+contectNumber.classList.add('contectName');
+contectNumber.setAttribute("placeholder","Number....")
+contectNumber.setAttribute("type","number")
+contectFormContainer.append(contectNumber);
+
+let contectButton = document.createElement('button');
+contectButton.classList.add('contectButton');
+contectButton.innerHTML="Submit"
+contectFormContainer.append(contectButton);
 
 
 
 
+// contect right container ==>
+let contectMailContainer = document.createElement('div');
+contectMailContainer.classList.add('contectMailContainer');
+contectContainer.append(contectFormContainer, contectMailContainer);
 
+let phoneAnchorTag=document.createElement('a');
+phoneAnchorTag.setAttribute("href","tel:+918115325972");
+let phoneImgTag=document.createElement("img");
+phoneImgTag.classList.add("phoneImgTag");
+phoneImgTag.setAttribute("src","Photos/callbtn.svg");
+phoneAnchorTag.append(phoneImgTag);
 
+let gmailAnchorTag=document.createElement('a');
+gmailAnchorTag.setAttribute("href","mailto:prashantks2223@gmail.com");
+let gmailImgTag=document.createElement("img");
+gmailImgTag.classList.add("phoneImgTag");
+gmailImgTag.setAttribute("src","Photos/emailbtn.svg");
+gmailAnchorTag.append(gmailImgTag);
 
-
-
-
-
+contectMailContainer.append(phoneAnchorTag, gmailAnchorTag);
 
 
 

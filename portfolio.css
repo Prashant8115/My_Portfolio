@@ -253,6 +253,7 @@ header {
 }
 .divProjectsContainer{
     border: 2px solid blueviolet;
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 0px 24px 10px;
     border-radius: 20px;
     background-color: black;
     height:fit-content;
@@ -308,7 +309,7 @@ header {
 
 /* Experience Page  */
 .experience{
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -329,3 +330,99 @@ header {
     font-weight: bold;
 }
 
+.experienceContainer{
+    border: 2px solid blueviolet;
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 0px 24px 10px;
+    border-radius: 20px;
+    width: 60%;
+    height: fit-content;
+    padding: 30px;
+}
+
+.experienceDivTag{
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+}
+
+.keyTag{
+    font-weight: bold;
+}
+
+.detailsTag{
+    color: red;
+    font-size: small;
+}
+
+/* Contect Page  */
+.contect{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+    background-color: #1c1c27;
+    color: white;
+}
+
+.contectContainer{
+    width: 60%;
+    height:55%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.contectFormContainer{
+    background-color: rgb(22, 22, 22);
+    border:2px solid blueviolet;
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 0px 24px 10px;
+    border-radius: 20px;
+    width: 40%;
+    height:100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.emailMe{
+    border-bottom: 2px solid red;
+    width: fit-content;
+    padding-bottom: 2px;
+}
+
+.contectName{
+    padding: 10px;
+    background-color:rgb(15, 15, 15);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.contectButton{
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgb(6, 163, 242);
+    color: white;
+}
+
+.contectMailContainer{
+    width: 40%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: end;
+    padding-right: 20px;
+}
+
+.phoneImgTag{
+    height: 80px;
+    background-color: rgb(22, 22, 22);
+    padding: 25px;
+    border: 1px solid blueviolet;
+    border-radius: 100%;
+}
